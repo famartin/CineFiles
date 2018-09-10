@@ -1,32 +1,15 @@
 const express = require('express');
 const fetch = require('node-fetch');
-const API = '?api_key=f7490bb2d22f0d184c552b8a15b5b733'
+
+const API = '?api_key=f7490bb2d22f0d184c552b8a15b5b733';
+const movie = require('./routes/movie');
+
 const app = express();
+
+app.use('/api/movie', movie);
 
 app.get('/api', (req, res) => {
 	res.send('You\'re at \'/api\'');
-});
-
-app.get('/api/movie/latest', (req, res) => {
-	fetch(`https://api.themoviedb.org/3/movie/latest${API}&language=en-US`)
-		.then((data) => {
-			return (data.json());
-		})
-		.then((json) => {
-			console.log(json);
-			res.send(json);
-	});
-});
-
-app.get('/api/movie/now_playing/:page', (req, res) => {
-	fetch(`https://api.themoviedb.org/3/movie/now_playing${API}&language=en-US&page=${req.params.page}`)
-		.then((data) => {
-			return (data.json());
-		})
-		.then((json) => {
-			console.log(json);
-			res.send(json);
-	});
 });
 
 app.get('/api/discover/:page', (req, res) => {
