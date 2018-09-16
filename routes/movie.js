@@ -61,6 +61,19 @@ router.get('/popular/:page', (req, res) => {
 	});
 });
 
+/* GET route to get the top rated movies */
+
+router.get('/top_rated/:page', (req, res) => {
+	fetch(`https://api.themoviedb.org/3/movie/top_rated${API}&language=en-US&page=${req.params.page}`)
+		.then((data) => {
+			return (data.json());
+		})
+		.then((json) => {
+			console.log(json);
+			res.send(json);
+	});
+});
+
 /* GET Route to get movie reviews */
 
 router.get('/:movie_id/reviews', (req, res) => {
