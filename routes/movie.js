@@ -87,6 +87,4 @@ router.get('/:movie_id/reviews', (req, res) => {
 	});
 });
 
-
-
 module.exports = router;
