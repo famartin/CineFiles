@@ -1,0 +1,56 @@
+.section {
+    padding: 3rem 1.5rem;
+}
+
+.section.search {
+    background-color: transparent;
+    padding-top: 0;
+    margin-top: -1.7rem;
+}
+
+form {
+    display: block;
+    margin-top: 0em;
+}
+
+.control {
+    font-size: 1rem;
+    position: relative;
+    text-align: left;
+}
+
+.input, .textarea {
+    background-color: #fff;
+    border-color: #dbdbdb;
+    color: #363636;
+    -webkit-box-shadow: inset 0 1px 2px rgba(10,10,10,.1);
+    box-shadow: inset 0 1px 2px rgba(10,10,10,.1);
+    max-width: 100%;
+    width: 100%;
+}
+
+.has-text-centered {
+    text-align: center!important;
+}
+
+form button.button {
+    color: #d3d3d3;
+}
+
+.fa {
+	display: inline-block;
+	font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.field.has-addons .control.is-expanded {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+
+.input.is-large, .textarea.is-large {
+    font-size: 1.5rem;
+}
