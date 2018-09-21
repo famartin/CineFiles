@@ -7,7 +7,13 @@ header, section, div {
 }
 
 header {
-  background-color: rgb(209, 128, 90);
+  background-image: url('images/header-background.jpg');
+  background-repeat:no-repeat;
+  -webkit-background-size:cover;
+  -moz-background-size:cover;
+  -o-background-size:cover;
+  background-size:cover;
+  background-position:center;
 }
 
 .hero {
@@ -60,6 +66,7 @@ header {
   -ms-flex-negative: 0;
   flex-shrink: 0;
   padding: 3rem 1.5rem;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 header.hero .hero-body {
@@ -74,6 +81,10 @@ header.hero .hero-body {
 img {
   height: auto;
   max-width: 100%;
+}
+
+.button.is-large {
+  font-size: 1.5rem;
 }
 
 .button {
@@ -91,4 +102,11 @@ img {
   padding-top: calc(0.375em - 1px);
   text-align: center;
   white-space: nowrap;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
 }
