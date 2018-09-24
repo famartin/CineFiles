@@ -16,6 +16,7 @@ class Main extends Component {
 										itemTitle={item.title}
 										itemName={item.name}
 										itemType={item.media_type}
+										itemBgUrl={item.backdrop_path}
 									/>);
 								})
 							}
