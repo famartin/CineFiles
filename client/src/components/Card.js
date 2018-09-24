@@ -3,7 +3,11 @@ import React, { Component } from 'react';
 class Card extends Component {
 	render() {
     	return (
-			<h2>{this.props.name}</h2>
+			<div class="tile is-child card">
+				<div class="card-content">
+					<p>{this.props.name}</p>
+				</div>
+			</div>
 		);
 	}
 }

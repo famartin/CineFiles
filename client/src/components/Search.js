@@ -6,14 +6,13 @@ class Search extends Component {
     return (
 		<section className="section search">
 			<div className="container">
-				<form id="search-form" action="/searches" method="POST">
-					<input type="hidden" name="_csrf" value="XeiXGVjn-Xs_3aSk_7iMGzh84PgeyMRWRwr4" />
+				<form id="search-form" onSubmit={this.props.getData} action="/search" method="GET">
 					<div className="field has-addons">
 						<div id="search-field-control" className="control is-large is-expanded">
-							<input className="input is-large has-text-centered" type="text" id="search-field" name="q" autoComplete="off" placeholder="type a movie, tv show or person" />
+							<input className="input is-large has-text-centered" type="text" id="search-field" name="q" autoComplete="off" placeholder="type a movie, tv show or person" required />
 						</div>
 						<div className="control">
-							<button type="submit" className="button is-large" id="search-button">
+							<button type="submit" className="button is-large" id="search-button" value="Submit">
 								<span className="icon is-medium is-right">
 									<i className="fa fa-search"></i>
 								</span>
