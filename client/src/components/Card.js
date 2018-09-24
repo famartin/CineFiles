@@ -3,9 +3,11 @@ import React, { Component } from 'react';
 class Card extends Component {
 	render() {
     	return (
-			<div class="tile is-child card">
-				<div class="card-content">
-					<p>{this.props.name}</p>
+			<div className="tile is-child card">
+				<div className="card-content">
+					<h4>{this.props.itemTitle}</h4>
+					<h4>{this.props.itemName}</h4>
+					<p>{this.props.itemType}</p>
 				</div>
 			</div>
 		);

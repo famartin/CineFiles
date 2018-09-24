@@ -3,29 +3,20 @@ import Card from './Card';
 import './Main.css';
 
 class Main extends Component {
-	constructor() {
-		super();
-	}
-
-	array = [
-		'movie 1',
-		'movie 2',
-		'movie 3',
-		'movie 4',
-		'movie 5',
-		'movie 6',
-		'movie 7',
-	];
-
 	render() {
+		console.log(this.props.passedData);
     	return (
 			<section className="section main">
 				<div className="container">
-					<div class="tile is-ancestor is-vertical">
-						<div class="tile is-vertical is-parent">
+					<div className="tile is-ancestor is-vertical">
+						<div className="tile is-vertical is-parent">
 							{
-								this.array.map((string) => {
-        							return <Card name={string}/>;
+								this.props.passedData && this.props.passedData.results.map((item) => {
+									return (<Card
+										itemTitle={item.title}
+										itemName={item.name}
+										itemType={item.media_type}
+									/>);
 								})
 							}
 						</div>

@@ -15,16 +15,32 @@ class App extends Component {
 
   getData = (e) => {
     e.preventDefault();
-    fetch(`/api/search/all/${e.target.elements.q.value}/2`)
-      .then(res => {
-        return res.json();
-      })
-      .then(data => {
-        this.setState({
-          list: data
-        });
-        console.log(data);
-      })
+    fetch(`/api/search/all/${e.target.elements.q.value}/1`)
+    .then(res => {
+      return res.json();
+    })
+    .then(data => {
+      this.setState({
+        list: data
+      });
+      console.log(this.state.list);
+    })
+  }
+
+  discoverData = () => {
+    fetch(`/api/discover/movie/1`)
+    .then(res => {
+      return res.json();
+    })
+    .then(data => {
+      this.setState({
+        list: data
+      });
+    })
+  }
+
+  componentDidMount() {
+    this.discoverData();
   }
 
   render() {
@@ -32,7 +48,7 @@ class App extends Component {
       <div className="App">
       <Header />
       <Search getData={this.getData}/>
-      <Main />
+      <Main passedData={this.state.list}/>
       </div>
     );
   }
