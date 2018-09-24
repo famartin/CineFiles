@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Card from './Card';
 
 class Main extends Component {
 	constructor() {
@@ -23,7 +24,7 @@ class Main extends Component {
 						<div class="tile is-vertical is-parent">
 							{
 								this.array.map((string) => {
-        							return <p>{string}</p>;
+        							return <Card name={string}/>;
 								})
 							}
 						</div>
