@@ -4,9 +4,24 @@ import './Main.css';
 
 class Main extends Component {
 	render() {
-		console.log(this.props.passedData);
     	return (
 			<section className="section main">
+				<div className="container">
+					<ul className="nav nav-pills justify-content-center">
+						<li className="nav-item">
+							<a className="nav-link active" href="#">Active</a>
+						</li>
+						<li className="nav-item">
+							<a className="nav-link" href="#">Link</a>
+						</li>
+						<li className="nav-item">
+							<a className="nav-link" href="#">Link</a>
+						</li>
+						<li className="nav-item">
+							<a className="nav-link disabled" href="#">Disabled</a>
+						</li>
+					</ul>
+				</div>
 				<div className="container">
 					<div className="tile is-ancestor is-vertical">
 						<div className="tile is-vertical is-parent">
@@ -15,8 +30,7 @@ class Main extends Component {
 									return (<Card
 										itemTitle={item.title}
 										itemName={item.name}
-										itemType={item.media_type}
-										itemBgUrl={item.backdrop_path}
+										itemBgUrl={item.poster_path}
 									/>);
 								})
 							}

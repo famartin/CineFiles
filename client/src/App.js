@@ -13,7 +13,7 @@ class App extends Component {
     }
   }
 
-  getData = (e) => {
+  searchData = (e) => {
     e.preventDefault();
     fetch(`/api/search/all/${e.target.elements.q.value}/1`)
     .then(res => {
@@ -47,7 +47,7 @@ class App extends Component {
     return (
       <div className="App">
       <Header />
-      <Search getData={this.getData}/>
+      <Search getData={this.searchData}/>
       <Main passedData={this.state.list}/>
       </div>
     );
