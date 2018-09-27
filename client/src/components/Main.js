@@ -7,18 +7,18 @@ class Main extends Component {
     	return (
 			<section className="section main">
 				<div className="container">
-					<ul className="nav nav-pills justify-content-center">
+					<ul id="CategoryToggle" className="nav nav-pills justify-content-center">
 						<li className="nav-item">
-							<a className="nav-link active" href="#">Active</a>
+							<button className="nav-link active" onClick={this.props.getNowPlaying}>Now Playing</button>
 						</li>
 						<li className="nav-item">
-							<a className="nav-link" href="#">Link</a>
+							<button className="nav-link" >Upcoming</button>
 						</li>
 						<li className="nav-item">
-							<a className="nav-link" href="#">Link</a>
+							<button className="nav-link" >Popular</button>
 						</li>
 						<li className="nav-item">
-							<a className="nav-link disabled" href="#">Disabled</a>
+							<button className="nav-link" onClick={this.props.getDiscover}>Discover</button>
 						</li>
 					</ul>
 				</div>
@@ -31,6 +31,7 @@ class Main extends Component {
 										itemTitle={item.title}
 										itemName={item.name}
 										itemBgUrl={item.poster_path}
+										key={item.id}
 									/>);
 								})
 							}

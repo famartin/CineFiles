@@ -39,8 +39,20 @@ class App extends Component {
     })
   }
 
+  nowPlayingData = () => {
+    fetch(`/api/movie/now_playing/1`)
+    .then(res => {
+      return res.json();
+    })
+    .then(data => {
+      this.setState({
+        list:data
+      })
+    })
+  }
+
   componentDidMount() {
-    this.discoverData();
+    this.nowPlayingData();
   }
 
   render() {
@@ -48,7 +60,11 @@ class App extends Component {
       <div className="App">
       <Header />
       <Search getData={this.searchData}/>
-      <Main passedData={this.state.list}/>
+      <Main
+        passedData={this.state.list}
+        getNowPlaying={this.nowPlayingData}
+        getDiscover={this.discoverData}
+      />
       </div>
     );
   }
