@@ -6,7 +6,8 @@ class Main extends Component {
 	constructor() {
 		super();
 		this.state = {
-			currentPage: 1
+			currentPage: 1,
+			currentCategory: 'now-playing'
 		};
 		this.handleClick = this.handleClick.bind(this);
 	}
@@ -22,10 +23,10 @@ class Main extends Component {
 	createPagination = () => {
 		let pages = [];
 
-		var numOfPages = this.props.passedData.total_pages;
+		var numOfPages = this.props.passedData.total_pages + 1;
 
-		if (this.props.passedData.total_pages >= 10) {
-			numOfPages = 11;
+		if (this.props.passedData.total_pages >= 5) {
+			numOfPages = 6;
 		}
 	
 		for (let i = 1; i < numOfPages; i++) {
@@ -63,19 +64,10 @@ class Main extends Component {
 					</ul>
 				</div>
 				<div className="container">
-					<nav aria-label="Page navigation example">
-						<ul className="pagination">
-							<li className="page-item"><a className="page-link" href="#">Previous</a></li>
-							{this.props.passedData && this.createPagination()}
-							<li className="page-item"><a className="page-link" href="#">Next</a></li>
-						</ul>
-					</nav>
-				</div>
-				<br />
-				<div className="container">
 					<div className="tile is-ancestor is-vertical">
 						<div className="tile is-vertical is-parent">
 							<h5>Pages: {this.props.passedData && this.props.passedData.total_pages}</h5><br />
+							<h5>Current Category: {this.props.currentCategory}</h5><br />
 							{
 								this.props.passedData && this.props.passedData.results.map((item) => {
 									return (<Card
@@ -89,6 +81,16 @@ class Main extends Component {
 						</div>
 					</div>
 				</div>
+				<div className="container">
+					<nav aria-label="Page navigation example">
+						<ul className="pagination">
+							<li className="page-item"><a className="page-link" href="#">Previous</a></li>
+							{this.props.passedData && this.createPagination()}
+							<li className="page-item"><a className="page-link" href="#">Next</a></li>
+						</ul>
+					</nav>
+				</div>
+				<br />
 			</section>
 		);
 	}

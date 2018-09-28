@@ -9,7 +9,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      list: undefined
+      list: undefined,
+      currentCategory: 'now-playing'
     }
   }
 
@@ -28,6 +29,10 @@ class App extends Component {
   }
 
   discoverData = () => {
+    this.setState({
+      currentCategory: 'discover'
+    });
+
     fetch(`/api/discover/movie/1`)
     .then(res => {
       return res.json();
@@ -40,6 +45,10 @@ class App extends Component {
   }
 
   nowPlayingData = () => {
+    this.setState({
+      currentCategory: 'now-playing'
+    });
+
     fetch(`/api/movie/now_playing/1`)
     .then(res => {
       return res.json();
@@ -62,6 +71,7 @@ class App extends Component {
       <Search getData={this.searchData}/>
       <Main
         passedData={this.state.list}
+        currentCategory={this.state.currentCategory}
         getNowPlaying={this.nowPlayingData}
         getDiscover={this.discoverData}
       />
