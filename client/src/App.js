@@ -60,6 +60,22 @@ class App extends Component {
     })
   }
 
+  upcomingData = () => {
+    this.setState({
+      currentCategory: 'upcoming'
+    });
+
+    fetch(`/api/movie/upcoming/1`)
+    .then(res => {
+      return res.json();
+    })
+    .then(data => {
+      this.setState({
+        list:data
+      })
+    })
+  }
+
   componentDidMount() {
     this.nowPlayingData();
   }
@@ -74,6 +90,7 @@ class App extends Component {
         currentCategory={this.state.currentCategory}
         getNowPlaying={this.nowPlayingData}
         getDiscover={this.discoverData}
+        getUpcoming={this.upcomingData}
       />
       </div>
     );
