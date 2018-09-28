@@ -21,8 +21,14 @@ class Main extends Component {
 
 	createPagination = () => {
 		let pages = [];
+
+		var numOfPages = this.props.passedData.total_pages;
+
+		if (this.props.passedData.total_pages >= 10) {
+			numOfPages = 10;
+		}
 	
-		for (let i = 1; i < this.props.passedData.total_pages; i++) {
+		for (let i = 1; i < numOfPages; i++) {
 			pages.push(
 				<li className="page-item" key={i}>
 					<a className="page-link" href="#"
