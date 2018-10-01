@@ -76,6 +76,22 @@ class App extends Component {
     })
   }
 
+  popularData = () => {
+    this.setState({
+      currentCategory: 'popular'
+    });
+
+    fetch(`/api/movie/popular/1`)
+    .then(res => {
+      return res.json();
+    })
+    .then(data => {
+      this.setState({
+        list:data
+      })
+    })
+  }
+
   componentDidMount() {
     this.nowPlayingData();
   }
@@ -91,6 +107,7 @@ class App extends Component {
         getNowPlaying={this.nowPlayingData}
         getDiscover={this.discoverData}
         getUpcoming={this.upcomingData}
+        getPopular={this.popularData}
       />
       </div>
     );

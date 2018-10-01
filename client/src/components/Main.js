@@ -56,7 +56,7 @@ class Main extends Component {
 							<button className="nav-link" onClick={this.props.getUpcoming}>Upcoming</button>
 						</li>
 						<li className="nav-item">
-							<button className="nav-link" >Popular</button>
+							<button className="nav-link" onClick={this.props.getPopular}>Popular</button>
 						</li>
 						<li className="nav-item">
 							<button className="nav-link" onClick={this.props.getDiscover}>Discover</button>
