@@ -50,16 +50,16 @@ class Main extends Component {
 				<div className="container">
 					<ul id="CategoryToggle" className="nav nav-pills justify-content-center">
 						<li className="nav-item">
-							<button className="nav-link active" onClick={this.props.getNowPlaying}>Now Playing</button>
+							<button className={this.props.currentCategory === 'now-playing' ? "nav-link active" : "nav-link"} onClick={this.props.getNowPlaying}>Now Playing</button>
 						</li>
 						<li className="nav-item">
-							<button className="nav-link" onClick={this.props.getUpcoming}>Upcoming</button>
+							<button className={this.props.currentCategory === 'upcoming' ? "nav-link active" : "nav-link"} onClick={this.props.getUpcoming}>Upcoming</button>
 						</li>
 						<li className="nav-item">
-							<button className="nav-link" onClick={this.props.getPopular}>Popular</button>
+							<button className={this.props.currentCategory === 'popular' ? "nav-link active" : "nav-link"} onClick={this.props.getPopular}>Popular</button>
 						</li>
 						<li className="nav-item">
-							<button className="nav-link" onClick={this.props.getDiscover}>Discover</button>
+							<button className={this.props.currentCategory === 'discover' ? "nav-link active" : "nav-link"} onClick={this.props.getDiscover}>Discover</button>
 						</li>
 					</ul>
 				</div>
