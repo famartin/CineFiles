@@ -32,7 +32,7 @@ class Main extends Component {
 		for (let i = 1; i < numOfPages; i++) {
 			pages.push(
 				<li className="page-item" key={i}>
-					<a className="page-link" href="#"
+					<a className="page-link" href="/"
 						id={i}
 						onClick={this.handleClick}
 					>
@@ -84,9 +84,9 @@ class Main extends Component {
 				<div className="container">
 					<nav aria-label="Page navigation example">
 						<ul className="pagination">
-							<li className="page-item"><a className="page-link" href="#">Previous</a></li>
+							<li className="page-item"><a className="page-link" href="/">Previous</a></li>
 							{this.props.passedData && this.createPagination()}
-							<li className="page-item"><a className="page-link" href="#">Next</a></li>
+							<li className="page-item"><a className="page-link" href="/">Next</a></li>
 						</ul>
 					</nav>
 				</div>

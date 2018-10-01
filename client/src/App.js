@@ -16,6 +16,11 @@ class App extends Component {
 
   searchData = (e) => {
     e.preventDefault();
+
+    this.setState({
+      currentCategory: 'search'
+    });
+
     fetch(`/api/search/all/${e.target.elements.q.value}/1`)
     .then(res => {
       return res.json();
