@@ -22,23 +22,23 @@ class App extends Component {
 
     switch (this.state.currentCategory) {
       default: 
-        this.nowPlayingData();
+        this.nowPlayingData(data);
         break;
 
       case 'now-playing':
-        this.nowPlayingData();
+        this.nowPlayingData(data);
         break;
 
       case 'upcoming':
-        this.upcomingData();
+        this.upcomingData(data);
         break;
 
       case 'popular':
-        this.popularData();
+        this.popularData(data);
         break;
 
       case 'discover':
-        this.discoverData();
+        this.discoverData(data);
         break;   
     }
   }
@@ -62,12 +62,12 @@ class App extends Component {
     })
   }
 
-  discoverData = () => {
+  discoverData = (page) => {
     this.setState({
       currentCategory: 'discover'
     });
 
-    fetch(`/api/discover/movie/1`)
+    fetch(`/api/discover/movie/${page}`)
     .then(res => {
       return res.json();
     })
@@ -78,12 +78,12 @@ class App extends Component {
     })
   }
 
-  nowPlayingData = () => {
+  nowPlayingData = (page) => {
     this.setState({
       currentCategory: 'now-playing'
     });
 
-    fetch(`/api/movie/now_playing/${this.state.currentPage}`)
+    fetch(`/api/movie/now_playing/${page}`)
     .then(res => {
       return res.json();
     })
@@ -94,12 +94,12 @@ class App extends Component {
     })
   }
 
-  upcomingData = () => {
+  upcomingData = (page) => {
     this.setState({
       currentCategory: 'upcoming'
     });
 
-    fetch(`/api/movie/upcoming/1`)
+    fetch(`/api/movie/upcoming/${page}`)
     .then(res => {
       return res.json();
     })
@@ -110,12 +110,12 @@ class App extends Component {
     })
   }
 
-  popularData = () => {
+  popularData = (page) => {
     this.setState({
       currentCategory: 'popular'
     });
 
-    fetch(`/api/movie/popular/1`)
+    fetch(`/api/movie/popular/${page}`)
     .then(res => {
       return res.json();
     })

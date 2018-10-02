@@ -18,7 +18,7 @@ class Main extends Component {
           currentPage: Number(event.target.id)
 		});
 
-		this.props.getCurrentPage(this.state.currentPage);
+		this.props.getCurrentPage(Number(event.target.id));
 	}
 
 	createPagination = () => {
