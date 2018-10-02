@@ -13,12 +13,13 @@ class Main extends Component {
 	}
 
 	handleClick(event) {
+		event.preventDefault();
         this.setState({
           currentPage: Number(event.target.id)
 		});
-		console.log(event.target.id);
-		console.log(this.state.currentPage);
-    }
+
+		this.props.getCurrentPage(this.state.currentPage);
+	}
 
 	createPagination = () => {
 		let pages = [];

@@ -10,7 +10,36 @@ class App extends Component {
     super();
     this.state = {
       list: undefined,
+      currentPage: 1,
       currentCategory: 'now-playing'
+    }
+  }
+
+  getCurrentPage = (data) => {
+    this.setState({
+      currentPage: data
+    });
+
+    switch (this.state.currentCategory) {
+      default: 
+        this.nowPlayingData();
+        break;
+
+      case 'now-playing':
+        this.nowPlayingData();
+        break;
+
+      case 'upcoming':
+        this.upcomingData();
+        break;
+
+      case 'popular':
+        this.popularData();
+        break;
+
+      case 'discover':
+        this.discoverData();
+        break;   
     }
   }
 
@@ -54,7 +83,7 @@ class App extends Component {
       currentCategory: 'now-playing'
     });
 
-    fetch(`/api/movie/now_playing/1`)
+    fetch(`/api/movie/now_playing/${this.state.currentPage}`)
     .then(res => {
       return res.json();
     })
@@ -102,6 +131,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.currentPage);
     return (
       <div className="App">
       <Header />
@@ -113,6 +143,7 @@ class App extends Component {
         getDiscover={this.discoverData}
         getUpcoming={this.upcomingData}
         getPopular={this.popularData}
+        getCurrentPage={this.getCurrentPage}
       />
       </div>
     );
