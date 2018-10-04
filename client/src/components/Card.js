@@ -9,8 +9,8 @@ class Card extends Component {
 					<div className="row">
 						<div className="col-sm-4">
 							<div className="card-content">
-								<h4>{this.props.itemTitle}</h4>
-								<h4>{this.props.itemName}</h4>
+								{this.props.itemTitle && <h4 className="card-title">{this.props.itemTitle}</h4>}
+								{this.props.itemName && <h4 className="card-title">{this.props.itemName}</h4>}
 								<img alt={`${this.props.itemName} Poster`} className="poster" src={`https://image.tmdb.org/t/p/w500${this.props.itemBgUrl}`} />
 							</div>
 						</div>
