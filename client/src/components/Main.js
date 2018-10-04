@@ -84,7 +84,7 @@ class Main extends Component {
 									return (<Card
 										itemTitle={item.title}
 										itemName={item.name}
-										itemBgUrl={item.poster_path}
+										itemPosterUrl={item.poster_path}
 										key={item.id}
 										description={item.overview}
 									/>);
