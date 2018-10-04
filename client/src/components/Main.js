@@ -86,6 +86,7 @@ class Main extends Component {
 										itemName={item.name}
 										itemBgUrl={item.poster_path}
 										key={item.id}
+										description={item.overview}
 									/>);
 								})
 							}
