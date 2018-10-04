@@ -25,6 +25,10 @@ class App extends Component {
         this.nowPlayingData(data);
         break;
 
+      /*case 'search':
+        this.searchData(data);
+        break;*/
+
       case 'now-playing':
         this.nowPlayingData(data);
         break;

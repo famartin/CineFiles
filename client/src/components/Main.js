@@ -65,6 +65,16 @@ class Main extends Component {
 					</ul>
 				</div>
 				<div className="container">
+					<nav aria-label="Page navigation example">
+						<ul className="pagination">
+							<li className="page-item"><a className="page-link" href="/">Previous</a></li>
+							{this.props.passedData && this.createPagination()}
+							<li className="page-item"><a className="page-link" href="/">Next</a></li>
+						</ul>
+					</nav>
+				</div>
+				<br />
+				<div className="container">
 					<div className="tile is-ancestor is-vertical">
 						<div className="tile is-vertical is-parent">
 							<h5>Pages: {this.props.passedData && this.props.passedData.total_pages}</h5><br />
