@@ -7,7 +7,6 @@ class Main extends Component {
 		super();
 		this.state = {
 			currentPage: 1,
-			currentCategory: 'now-playing'
 		};
 		this.handleClick = this.handleClick.bind(this);
 	}
