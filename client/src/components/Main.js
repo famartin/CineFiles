@@ -29,7 +29,7 @@ class Main extends Component {
 			numOfPages = 6;
 		}
 	
-		for (let i = 1; i < numOfPages; i++) {
+		for (let i = this.props.currentPage; i < this.props.currentPage + 6; i++) {
 			pages.push(
 				<li className="page-item" key={i}>
 					<a className="page-link" href="/"
@@ -50,7 +50,7 @@ class Main extends Component {
 				<div className="container">
 					<ul id="CategoryToggle" className="nav nav-pills justify-content-center">
 						<li className="nav-item">
-							<button className={this.props.currentCategory === 'now-playing' ? "nav-link active" : "nav-link"} onClick={this.props.getNowPlaying}>Now Playing</button>
+							<button className={this.props.currentCategory === 'now-playing' ? "nav-link active" : "nav-link"} onClick={() => { this.props.getNowPlaying(); this.props.resetPage();}}>Now Playing</button>
 						</li>
 						<li className="nav-item">
 							<button className={this.props.currentCategory === 'upcoming' ? "nav-link active" : "nav-link"} onClick={this.props.getUpcoming}>Upcoming</button>
@@ -77,6 +77,7 @@ class Main extends Component {
 					<div className="tile is-ancestor is-vertical">
 						<div className="tile is-vertical is-parent">
 							<h5>Pages: {this.props.passedData && this.props.passedData.total_pages}</h5><br />
+							<h5>Current Page: {this.props.currentPage && this.props.currentPage}</h5><br />
 							<h5>Current Category: {this.props.currentCategory}</h5><br />
 							{
 								this.props.passedData && this.props.passedData.results.map((item) => {

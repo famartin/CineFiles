@@ -15,6 +15,12 @@ class App extends Component {
     }
   }
 
+  resetPage = () => {
+    this.setState({
+      currentPage: 1
+    });
+  }
+
   getCurrentPage = (data) => {
     this.setState({
       currentPage: data
@@ -51,7 +57,8 @@ class App extends Component {
     e.preventDefault();
 
     this.setState({
-      currentCategory: 'search'
+      currentCategory: 'search',
+      currentPage: 1
     });
 
     fetch(`/api/search/all/${e.target.elements.q.value}/1`)
@@ -143,11 +150,13 @@ class App extends Component {
       <Main
         passedData={this.state.list}
         currentCategory={this.state.currentCategory}
+        currentPage={this.state.currentPage}
         getNowPlaying={this.nowPlayingData}
         getDiscover={this.discoverData}
         getUpcoming={this.upcomingData}
         getPopular={this.popularData}
         getCurrentPage={this.getCurrentPage}
+        resetPage={this.resetPage}
       />
       </div>
     );
