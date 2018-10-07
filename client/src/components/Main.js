@@ -22,16 +22,22 @@ class Main extends Component {
 
 	createPagination = () => {
 		let pages = [];
+		let numOfPages;
+		let pageLimit = this.props.passedData.total_pages;
 
-		var numOfPages = this.props.passedData.total_pages + 1;
-
-		if (this.props.passedData.total_pages >= 5) {
-			numOfPages = 6;
+		if (this.props.passedData.total_pages < 5) {
+			numOfPages = this.props.passedData.total_pages + 1;
+		} else {
+			if ( this.props.currentPage + 5 > pageLimit) {
+				numOfPages = this.props.currentPage + (pageLimit - this.props.currentPage) + 1;
+			} else {
+				numOfPages = this.props.currentPage + 5;
+			}
 		}
 	
-		for (let i = this.props.currentPage; i < this.props.currentPage + 6; i++) {
+		for (let i = this.props.currentPage; i < numOfPages; i++) {
 			pages.push(
-				<li className="page-item" key={i}>
+				<li className={this.props.currentPage === i ? 'page-item active' : 'page-item'} key={i}>
 					<a className="page-link" href="/"
 						id={i}
 						onClick={this.handleClick}
@@ -50,23 +56,23 @@ class Main extends Component {
 				<div className="container">
 					<ul id="CategoryToggle" className="nav nav-pills justify-content-center">
 						<li className="nav-item">
-							<button className={this.props.currentCategory === 'now-playing' ? "nav-link active" : "nav-link"} onClick={() => { this.props.getNowPlaying(); this.props.resetPage();}}>Now Playing</button>
+							<button className={this.props.currentCategory === 'now-playing' ? "nav-link active" : "nav-link"} onClick={() => { this.props.getNowPlaying(); this.props.resetPage(); }}>Now Playing</button>
 						</li>
 						<li className="nav-item">
-							<button className={this.props.currentCategory === 'upcoming' ? "nav-link active" : "nav-link"} onClick={this.props.getUpcoming}>Upcoming</button>
+							<button className={this.props.currentCategory === 'upcoming' ? "nav-link active" : "nav-link"} onClick={() => { this.props.getUpcoming(); this.props.resetPage(); }}>Upcoming</button>
 						</li>
 						<li className="nav-item">
-							<button className={this.props.currentCategory === 'popular' ? "nav-link active" : "nav-link"} onClick={this.props.getPopular}>Popular</button>
+							<button className={this.props.currentCategory === 'popular' ? "nav-link active" : "nav-link"} onClick={() => { this.props.getPopular(); this.props.resetPage(); }}>Popular</button>
 						</li>
 						<li className="nav-item">
-							<button className={this.props.currentCategory === 'discover' ? "nav-link active" : "nav-link"} onClick={this.props.getDiscover}>Discover</button>
+							<button className={this.props.currentCategory === 'discover' ? "nav-link active" : "nav-link"} onClick={() => { this.props.getDiscover(); this.props.resetPage(); }}>Discover</button>
 						</li>
 					</ul>
 				</div>
 				<div className="container">
 					<nav aria-label="Page navigation example">
 						<ul className="pagination">
-							<li className="page-item"><a className="page-link" href="/">Back</a></li>
+							{this.props.currentPage > 1 ? <li className="page-item"><a className="page-link" href="/" id={this.props.currentPage - 1} onClick={this.handleClick}>Back</a></li> : <li></li> }
 							{this.props.passedData && this.createPagination()}
 							<li className="page-item"><a className="page-link" href="/">Next</a></li>
 						</ul>
