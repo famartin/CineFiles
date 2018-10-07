@@ -30,4 +30,23 @@
 	overflow: hidden;
 	box-sizing: content-box;
 	max-height: 11rem;
+	padding-top: 1.5rem;
+	color: rgb(124, 124, 124);
+}
+
+.card-overview-bg {
+	background-color: rgb(250, 250, 250);
+	height: 87%;
+	margin-right: 2rem;
+	border-radius: .6rem;
+}
+
+@media screen and (min-width: 0px) and (max-width: 575px) {
+    .card-overview-bg {
+		display: none;
+	}
+
+	.poster {
+		height: 26rem;
+	}
 }

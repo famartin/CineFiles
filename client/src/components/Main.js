@@ -66,7 +66,7 @@ class Main extends Component {
 				<div className="container">
 					<nav aria-label="Page navigation example">
 						<ul className="pagination">
-							<li className="page-item"><a className="page-link" href="/">Previous</a></li>
+							<li className="page-item"><a className="page-link" href="/">Back</a></li>
 							{this.props.passedData && this.createPagination()}
 							<li className="page-item"><a className="page-link" href="/">Next</a></li>
 						</ul>
@@ -95,7 +95,7 @@ class Main extends Component {
 				<div className="container">
 					<nav aria-label="Page navigation example">
 						<ul className="pagination">
-							<li className="page-item"><a className="page-link" href="/">Previous</a></li>
+							<li className="page-item"><a className="page-link" href="/">Back</a></li>
 							{this.props.passedData && this.createPagination()}
 							<li className="page-item"><a className="page-link" href="/">Next</a></li>
 						</ul>

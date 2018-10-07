@@ -20,7 +20,9 @@ class Card extends Component {
 							</div>
 						</div>
 						<div className="col-sm-8">
-							<p className="card-overview">{this.props.description}</p>
+							<div className="card-overview-bg">
+								<p className="card-overview">{this.props.description}</p>
+							</div>
 						</div>
 					</div>
 				</div>
