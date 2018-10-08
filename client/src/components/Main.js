@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import windowSize from 'react-window-size';
 import Card from './Card';
 import './Main.css';
 
@@ -26,13 +27,13 @@ class Main extends Component {
 		let numOfPages;
 		let pageLimit = this.props.passedData.total_pages;
 
-		if (this.props.passedData.total_pages < 5) {
+		if (this.props.passedData.total_pages < 4) {
 			numOfPages = this.props.passedData.total_pages + 1;
 		} else {
-			if ( this.props.currentPage + 5 > pageLimit) {
+			if ( this.props.currentPage + 4 > pageLimit) {
 				numOfPages = this.props.currentPage + (pageLimit - this.props.currentPage) + 1;
 			} else {
-				numOfPages = this.props.currentPage + 5;
+				numOfPages = this.props.currentPage + 4;
 			}
 		}
 	
@@ -72,7 +73,7 @@ class Main extends Component {
 				</div>
 				<div className="container">
 					<nav aria-label="Page navigation example">
-						<ul className="pagination">
+						<ul className={this.props.windowWidth > 575 ? "pagination" : "pagination pagination-sm"}>
 							{this.props.currentPage > 1 ? <li className="page-item"><a className="page-link" href="/" id={this.props.currentPage - 1} onClick={this.handleClick}>Back</a></li> : <li></li> }
 							{this.props.passedData && this.createPagination()}
 							{this.props.passedData && this.props.currentPage < this.props.passedData.total_pages ? <li className="page-item"><a className="page-link" href="/" id={this.props.currentPage + 1} onClick={this.handleClick}>Next</a></li> : <li></li>}
@@ -85,6 +86,7 @@ class Main extends Component {
 						<div className="tile is-vertical is-parent">
 							<h5>Pages: {this.props.passedData && this.props.passedData.total_pages}</h5><br />
 							<h5>Current Page: {this.props.currentPage && this.props.currentPage}</h5><br />
+							<h5>Window Width: {this.props.windowWidth}</h5><br />
 							<h5>Current Category: {this.props.currentCategory}</h5><br />
 							{
 								this.props.passedData && this.props.passedData.results.map((item) => {
@@ -115,4 +117,4 @@ class Main extends Component {
 	}
 }
 
-export default Main;
+export default windowSize(Main);
