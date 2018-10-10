@@ -17,7 +17,6 @@ class Main extends Component {
         this.setState({
           currentPage: Number(event.target.id)
 		});
-
 		this.props.getCurrentPage(Number(event.target.id));
 		window.scrollTo(0, 0)
 	}
@@ -27,13 +26,13 @@ class Main extends Component {
 		let numOfPages;
 		let pageLimit = this.props.passedData.total_pages;
 
-		if (this.props.passedData.total_pages < 4) {
+		if (this.props.passedData.total_pages < 5) {
 			numOfPages = this.props.passedData.total_pages + 1;
 		} else {
-			if ( this.props.currentPage + 4 > pageLimit) {
+			if ( this.props.currentPage + 5 > pageLimit) {
 				numOfPages = this.props.currentPage + (pageLimit - this.props.currentPage) + 1;
 			} else {
-				numOfPages = this.props.currentPage + 4;
+				numOfPages = this.props.currentPage + 5;
 			}
 		}
 	
@@ -72,13 +71,11 @@ class Main extends Component {
 					</ul>
 				</div>
 				<div className="container">
-					<nav aria-label="Page navigation example">
-						<ul className={this.props.windowWidth > 575 ? "pagination" : "pagination pagination-sm"}>
-							{this.props.currentPage > 1 ? <li className="page-item"><a className="page-link" href="/" id={this.props.currentPage - 1} onClick={this.handleClick}>Back</a></li> : <li></li> }
-							{this.props.passedData && this.createPagination()}
-							{this.props.passedData && this.props.currentPage < this.props.passedData.total_pages ? <li className="page-item"><a className="page-link" href="/" id={this.props.currentPage + 1} onClick={this.handleClick}>Next</a></li> : <li></li>}
-						</ul>
-					</nav>
+					<ul className={this.props.windowWidth > 575 ? "pagination justify-content-center" : "pagination pagination-sm justify-content-center"}>
+						{this.props.currentPage > 1 ? <li className="page-item"><a className="page-link" href="/" id={this.props.currentPage - 1} onClick={this.handleClick}>Back</a></li> : <li></li> }
+						{this.props.passedData && this.createPagination()}
+						{this.props.passedData && this.props.currentPage < this.props.passedData.total_pages ? <li className="page-item"><a className="page-link" href="/" id={this.props.currentPage + 1} onClick={this.handleClick}>Next</a></li> : <li></li>}
+					</ul>
 				</div>
 				<br />
 				<div className="container">
@@ -103,13 +100,11 @@ class Main extends Component {
 					</div>
 				</div>
 				<div className="container">
-					<nav aria-label="Page navigation example">
-						<ul className="pagination">
-							{this.props.currentPage > 1 ? <li className="page-item"><a className="page-link" href="/" id={this.props.currentPage - 1} onClick={this.handleClick}>Back</a></li> : <li></li> }
-							{this.props.passedData && this.createPagination()}
-							{this.props.passedData && this.props.currentPage < this.props.passedData.total_pages ? <li className="page-item"><a className="page-link" href="/" id={this.props.currentPage + 1} onClick={this.handleClick}>Next</a></li> : <li></li>}
-						</ul>
-					</nav>
+					<ul className={this.props.windowWidth > 575 ? "pagination justify-content-center" : "pagination pagination-sm justify-content-center"}>
+						{this.props.currentPage > 1 ? <li className="page-item"><a className="page-link" href="/" id={this.props.currentPage - 1} onClick={this.handleClick}>Back</a></li> : <li></li> }
+						{this.props.passedData && this.createPagination()}
+						{this.props.passedData && this.props.currentPage < this.props.passedData.total_pages ? <li className="page-item"><a className="page-link" href="/" id={this.props.currentPage + 1} onClick={this.handleClick}>Next</a></li> : <li></li>}
+					</ul>
 				</div>
 				<br />
 			</section>

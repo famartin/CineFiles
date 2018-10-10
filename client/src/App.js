@@ -11,7 +11,8 @@ class App extends Component {
     this.state = {
       list: undefined,
       currentPage: 1,
-      currentCategory: 'now-playing'
+      currentCategory: 'now-playing',
+      searchQuery: undefined
     }
   }
 
@@ -31,9 +32,9 @@ class App extends Component {
         this.nowPlayingData(data);
         break;
 
-      /*case 'search':
-        this.searchData(data);
-        break;*/
+      case 'search':
+        this.changeSearchPage(data);
+        break;
 
       case 'now-playing':
         this.nowPlayingData(data);
@@ -58,7 +59,8 @@ class App extends Component {
 
     this.setState({
       currentCategory: 'search',
-      currentPage: 1
+      currentPage: 1,
+      searchQuery: e.target.elements.q.value
     });
 
     fetch(`/api/search/all/${e.target.elements.q.value}/1`)
@@ -69,7 +71,22 @@ class App extends Component {
       this.setState({
         list: data
       });
-      console.log(this.state.list);
+    })
+  }
+
+  changeSearchPage = (page) => {
+    this.setState({
+      currentCategory: 'search'
+    });
+
+    fetch(`/api/search/all/${this.state.searchQuery}/${page}`)
+    .then(res => {
+      return res.json();
+    })
+    .then(data => {
+      this.setState({
+        list: data
+      });
     })
   }
 
