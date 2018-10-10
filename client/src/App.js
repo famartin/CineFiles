@@ -3,7 +3,8 @@ import './App.css';
 
 import Header from './components/Header';
 import Search from './components/Search';
-import Main from './components/Main'; 
+import Main from './components/Main';
+import Footer from './components/Footer';
 
 class App extends Component {
   constructor() {
@@ -175,6 +176,7 @@ class App extends Component {
         getCurrentPage={this.getCurrentPage}
         resetPage={this.resetPage}
       />
+      <Footer />
       </div>
     );
   }

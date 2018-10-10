@@ -6,17 +6,11 @@ import './Main.css';
 class Main extends Component {
 	constructor() {
 		super();
-		this.state = {
-			currentPage: 1,
-		};
 		this.handleClick = this.handleClick.bind(this);
 	}
 
 	handleClick(event) {
 		event.preventDefault();
-        this.setState({
-          currentPage: Number(event.target.id)
-		});
 		this.props.getCurrentPage(Number(event.target.id));
 		window.scrollTo(0, 0)
 	}
