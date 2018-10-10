@@ -41,6 +41,12 @@
 	margin-bottom: 2rem;
 }
 
+.nav-item
+.active {
+    background:rgb(136, 136, 136)!important;
+    box-shadow: 0 4px 8px 0 rgba(31, 52, 173, 0.747), 0 10px 20px 0 rgba(120, 218, 169, 0.493);
+}
+
 .page-item {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 10px 20px 0 rgba(0, 0, 0, 0.1);
 }
