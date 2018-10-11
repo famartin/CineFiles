@@ -44,16 +44,35 @@
 .nav-item
 .active {
     background:rgb(136, 136, 136)!important;
-    box-shadow: 0 4px 8px 0 rgba(31, 52, 173, 0.747), 0 10px 20px 0 rgba(120, 218, 169, 0.493);
 }
 
 .page-item {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 10px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
+.pagination
+.active
+a {
+    background:rgb(136, 136, 136)!important;
+    border: 1px solid rgb(136, 136, 136)!important;
+}
+
+.page-item a {
+    color: rgb(83, 83, 83);
+}
+
+.page-item a:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(214, 91, 97);
+    border: 1px solid rgb(214, 91, 97);
+}
+
+
 .nav-link {
 	margin: 1rem;
 	font-size: 1.2rem;
     padding: .5rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+    color: rgb(83, 83, 83);
 }
+
