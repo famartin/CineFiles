@@ -9,12 +9,12 @@ class Footer extends Component {
 					<div className="row">
 						<div className="col-md-8">
 							<img className="tmdb-logo" src="/assets/tmdb-logo.png" alt="The Movie Database Logo" /><br />
-							<small>This product uses the TMDb API but is not endorsed or certified by TMDb.</small><br />
+							<p><small>This product uses the TMDb API<br />but is not endorsed or certified by TMDb.</small></p>
 						</div>
-						<div className="col-md-4">
-							<h3>Thanks for stopping by...</h3>
-							<p>Made with <span role="img" aria-label="Heart Emoji">❤️</span> by <a target="blank" href="https://famartin.github.io">famartin</a><br /></p>
-							<small>&#169; famartin 2018</small>
+						<div className="col-md-4 thank-you">
+							<h4 className="text-right">Thanks for stopping by...</h4>
+							<p className="text-right">Made with <span role="img" aria-label="Heart Emoji">❤️</span> by <a target="blank" href="https://famartin.github.io">famartin</a><br /><small className="text-right">&#169; famartin 2018</small></p>
+							
 						</div>
 					</div>
 				</div>

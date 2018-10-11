@@ -21,7 +21,7 @@ class Card extends Component {
 						</div>
 						<div className="col-sm-8">
 							<div className="card-overview-bg">
-								<p className="card-overview">{this.props.description}</p>
+								<p className="card-overview">{this.props.description ? this.props.description : 'No description available.'}</p>
 							</div>
 						</div>
 					</div>
