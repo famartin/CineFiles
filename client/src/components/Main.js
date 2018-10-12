@@ -75,10 +75,6 @@ class Main extends Component {
 				<div className="container">
 					<div className="tile is-ancestor is-vertical">
 						<div className="tile is-vertical is-parent">
-							{/*<h5>Pages: {this.props.passedData && this.props.passedData.total_pages}</h5><br />
-							<h5>Current Page: {this.props.currentPage && this.props.currentPage}</h5><br />
-							<h5>Window Width: {this.props.windowWidth}</h5><br />
-							<h5>Current Category: {this.props.currentCategory}</h5><br />*/}
 							{
 								this.props.passedData && this.props.passedData.results.map((item) => {
 									return (<Card
@@ -86,6 +82,7 @@ class Main extends Component {
 										itemName={item.name}
 										itemPosterUrl={item.poster_path}
 										key={item.id}
+										itemId={item.id}
 										description={item.overview}
 									/>);
 								})

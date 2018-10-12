@@ -15,7 +15,7 @@ class Card extends Component {
 					<div className="row">
 						<div className="col-sm-4">
 							<div className="card-content">
-								{this.props.itemPosterUrl && <img alt={`${this.props.itemName} Poster`} className="poster" src={`https://image.tmdb.org/t/p/w500${this.props.itemPosterUrl}`} />}
+								{this.props.itemPosterUrl && <a href={`/id/${this.props.itemId}`}><img alt={`${this.props.itemName} Poster`} className="poster" src={`https://image.tmdb.org/t/p/w500${this.props.itemPosterUrl}`} /></a>}
 								{!this.props.itemPosterUrl && <img alt={`${this.props.itemName} Poster`} className="poster" src="/assets/poster-not-found.jpg" />}
 							</div>
 						</div>
