@@ -1,13 +1,37 @@
 import React, { Component } from 'react';
 
 class InfoPageMain extends Component {
+	constructor() {
+		super();
+		this.state = {
+			movieDetails: undefined
+		}
+	}
+
+	getMovieDetails = () => {
+		fetch(`/api/search/id/${this.props.movieId}`)
+	  	.then(res => {
+				return res.json();
+	  	})
+	  	.then(data => {
+			this.setState({
+		  		movieDetails:data
+			})
+			console.log(this.state.movieDetails);
+	  	})
+	}
+
+	componentDidMount() {
+		this.getMovieDetails();
+	}
+
 	render() {
 		return (
 			<div className="section infoPageMain container">
 				<div className="row">
 					<div className="col-md-12">
 						<h3 className="text-center">
-							Movie/Series Name
+							{this.state.movieDetails}
 						</h3>
 					</div>
 				</div>
@@ -16,7 +40,7 @@ class InfoPageMain extends Component {
 						<p>Id: {this.props.movieId}</p>
 					</div>
 					<div className="col-md-6">
-						<p>yay</p>
+						<p></p>
 					</div>
 				</div>
 			</div>
