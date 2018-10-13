@@ -16,7 +16,7 @@ class InfoPageMain extends Component {
 						<p>Id: {this.props.movieId}</p>
 					</div>
 					<div className="col-md-6">
-						<p></p>
+						<p>Overview: {this.props.movieOverview}</p>
 					</div>
 				</div>
 			</div>

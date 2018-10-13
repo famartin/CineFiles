@@ -8,7 +8,8 @@ class InfoPage extends Component {
 	constructor() {
 		super();
 		this.state = {
-			title: undefined
+			title: undefined,
+			overview: undefined
 		}
 	}
 
@@ -19,7 +20,8 @@ class InfoPage extends Component {
 	  	})
 	  	.then(data => {
 			this.setState({
-		  		title:data.name
+				title: data.name,
+				overview: data.overview  
 			})
 	  	})
 	}
@@ -31,7 +33,8 @@ class InfoPage extends Component {
 	  	})
 	  	.then(data => {
 			this.setState({
-		  		title:data.original_title
+				title: data.original_title,
+				overview: data.overview
 			})
 	  	})
 	}
@@ -54,6 +57,7 @@ class InfoPage extends Component {
 				<InfoPageMain
 					movieId={this.props.match.params.id}
 					movieTitle={this.state.title}
+					movieOverview={this.state.overview}
 				/>
 			</div>
 		);
