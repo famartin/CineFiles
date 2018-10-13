@@ -13,7 +13,7 @@ class InfoPageMain extends Component {
 				</div>
 				<div className="row">
 					<div className="col-md-6">
-						<p>yay</p>
+						<p>Id: {this.props.movieId}</p>
 					</div>
 					<div className="col-md-6">
 						<p>yay</p>

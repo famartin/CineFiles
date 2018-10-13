@@ -9,7 +9,9 @@ class InfoPage extends Component {
 		return (
 			<div className="infoPage">
 				<Header />
-				<InfoPageMain />
+				<InfoPageMain
+					movieId={this.props.match.params.id}
+				/>
 			</div>
 		);
 	}
