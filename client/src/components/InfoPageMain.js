@@ -7,16 +7,17 @@ class InfoPageMain extends Component {
 				<div className="row">
 					<div className="col-md-12">
 						<h2 className="text-center">
-							{this.props.movieTitle}
+							{this.props.itemTitle}
 						</h2>
 					</div>
 				</div>
 				<div className="row">
 					<div className="col-md-6">
-						<p>Id: {this.props.movieId}</p>
+						<p>Id: {this.props.itemId}</p>
+						<p>Release Date: {this.props.itemRelDate}</p>
 					</div>
 					<div className="col-md-6">
-						<p>Overview: {this.props.movieOverview}</p>
+						<p>Overview: {this.props.itemOverview}</p>
 					</div>
 				</div>
 			</div>
