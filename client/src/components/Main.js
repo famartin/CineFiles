@@ -84,6 +84,7 @@ class Main extends Component {
 										key={item.id}
 										itemId={item.id}
 										description={item.overview}
+										itemType={item.media_type}
 									/>);
 								})
 							}

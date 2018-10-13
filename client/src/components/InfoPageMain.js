@@ -1,38 +1,14 @@
 import React, { Component } from 'react';
 
 class InfoPageMain extends Component {
-	constructor() {
-		super();
-		this.state = {
-			movieDetails: undefined
-		}
-	}
-
-	getMovieDetails = () => {
-		fetch(`/api/search/id/${this.props.movieId}`)
-	  	.then(res => {
-				return res.json();
-	  	})
-	  	.then(data => {
-			this.setState({
-		  		movieDetails:data
-			})
-			console.log(this.state.movieDetails);
-	  	})
-	}
-
-	componentDidMount() {
-		this.getMovieDetails();
-	}
-
 	render() {
 		return (
 			<div className="section infoPageMain container">
 				<div className="row">
 					<div className="col-md-12">
-						<h3 className="text-center">
-							{this.state.movieDetails}
-						</h3>
+						<h2 className="text-center">
+							{this.props.movieTitle}
+						</h2>
 					</div>
 				</div>
 				<div className="row">

@@ -6,8 +6,21 @@ const API = '?api_key=f7490bb2d22f0d184c552b8a15b5b733';
 
 /* GET request for search by id */
 
-router.get('/id/:id', (req, res) => {
+router.get('/movie/id/:id', (req, res) => {
 	fetch(`https://api.themoviedb.org/3/movie/${req.params.id}${API}&language=en-US`)
+		.then((data) => {
+			return (data.json());
+		})
+		.then((json) => {
+			console.log(json);
+			res.send(json);
+	});
+});
+
+/* GET request for search by id */
+
+router.get('/tv/id/:id', (req, res) => {
+	fetch(`https://api.themoviedb.org/3/tv/${req.params.id}${API}&language=en-US`)
 		.then((data) => {
 			return (data.json());
 		})

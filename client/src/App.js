@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Switch>
-        <Route path="/id/:id" component={InfoPage}/>
+        <Route path="/:type/id/:id" component={InfoPage}/>
         <Route path="/" component={Home} exact />
         <Route component={Error} />
         </Switch>
