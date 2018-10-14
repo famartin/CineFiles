@@ -11,7 +11,8 @@ class InfoPage extends Component {
 			title: undefined,
 			overview: undefined,
 			releaseDate: undefined,
-			posterPath: undefined
+			posterPath: undefined,
+			backdropPath: undefined
 		}
 	}
 
@@ -25,7 +26,8 @@ class InfoPage extends Component {
 				title: data.name,
 				overview: data.overview,
 				releaseDate: data.first_air_date,
-				posterPath: data.poster_path
+				posterPath: data.poster_path,
+				backdropPath: data.backdrop_path
 			})
 	  	})
 	}
@@ -40,7 +42,8 @@ class InfoPage extends Component {
 				title: data.original_title,
 				overview: data.overview,
 				releaseDate: data.release_date,
-				posterPath: data.poster_path
+				posterPath: data.poster_path,
+				backdropPath: data.backdrop_path
 			})
 	  	})
 	}
@@ -66,6 +69,7 @@ class InfoPage extends Component {
 					itemOverview={this.state.overview}
 					itemRelDate={this.state.releaseDate}
 					itemPoster={this.state.posterPath}
+					itemBackdrop={this.state.backdropPath}
 				/>
 			</div>
 		);

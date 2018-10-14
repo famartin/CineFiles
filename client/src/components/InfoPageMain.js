@@ -21,8 +21,11 @@ class InfoPageMain extends Component {
 					</div>
 				</div>
 				<div className="row">
-					<div className="col-md-12">
+					<div className="col-md-6">
 						<img alt={`${this.props.itemTitle} Poster`} className="poster" src={`https://image.tmdb.org/t/p/w500${this.props.itemPoster}`} />
+					</div>
+					<div className="col-md-6">
+						<img className="backdrop" src={`https://image.tmdb.org/t/p/w500${this.props.itemBackdrop}`} />
 					</div>
 				</div>
 			</div>
