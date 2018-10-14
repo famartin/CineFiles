@@ -10,7 +10,8 @@ class InfoPage extends Component {
 		this.state = {
 			title: undefined,
 			overview: undefined,
-			releaseDate: undefined
+			releaseDate: undefined,
+			posterPath: undefined
 		}
 	}
 
@@ -23,7 +24,8 @@ class InfoPage extends Component {
 			this.setState({
 				title: data.name,
 				overview: data.overview,
-				releaseDate: data.first_air_date
+				releaseDate: data.first_air_date,
+				posterPath: data.poster_path
 			})
 	  	})
 	}
@@ -37,7 +39,8 @@ class InfoPage extends Component {
 			this.setState({
 				title: data.original_title,
 				overview: data.overview,
-				releaseDate: data.release_date
+				releaseDate: data.release_date,
+				posterPath: data.poster_path
 			})
 	  	})
 	}
@@ -62,6 +65,7 @@ class InfoPage extends Component {
 					itemTitle={this.state.title}
 					itemOverview={this.state.overview}
 					itemRelDate={this.state.releaseDate}
+					itemPoster={this.state.posterPath}
 				/>
 			</div>
 		);
