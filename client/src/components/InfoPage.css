@@ -3,18 +3,22 @@
 	margin-top: 2rem;
 }
 
-.titleBlock {
-	background-color: rgba(116, 116, 116, 0.247);
+.titleBlockBg {
 	background-repeat:no-repeat;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
 	-o-background-size:cover;
 	background-size:cover;
 	background-position:center;
-	height: 18rem;
+}
+
+.titleBlock {
+	background-image: linear-gradient(rgba(26, 26, 26, 0.829), rgba(43, 43, 43, 0.247));
+	height: 22rem;
 }
 
 .itemTitle {
 	font-size: 4rem;
 	color: #fff;
+	padding-top: 3.75rem;
 }

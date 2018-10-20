@@ -4,8 +4,8 @@ class InfoPageMain extends Component {
 	render() {
 		return (
 			<div className="section infoPageMain container">
-				<div className="row">
-					<div className="col-md-12 titleBlock" style={{'background-image': `url('https://image.tmdb.org/t/p/w1280${this.props.itemBackdrop}')`}}>
+				<div className="row titleBlockBg" style={{'background-image': `url('https://image.tmdb.org/t/p/w1280${this.props.itemBackdrop}')`}}>
+					<div className="col-md-12 titleBlock">
 						<h2 className="text-center itemTitle">
 							{this.props.itemTitle}
 						</h2>
