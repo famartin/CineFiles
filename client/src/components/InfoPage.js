@@ -62,7 +62,7 @@ class InfoPage extends Component {
 	render() {
 		return (
 			<div className="infoPage">
-				<Header />
+				{/*<Header />*/}
 				<InfoPageMain
 					itemId={this.props.match.params.id}
 					itemTitle={this.state.title}

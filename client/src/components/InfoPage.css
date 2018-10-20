@@ -1,6 +1,12 @@
-.infoPageMain {
-	background-color: white;
+.infoPageTitle {
+	background-color: #fff;
 	margin-top: 2rem;
+	margin-bottom: 1rem;
+}
+
+.infoPageContent {
+	background-color: #fff;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 10px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
 .titleBlockBg {
@@ -14,11 +20,11 @@
 
 .titleBlock {
 	background-image: linear-gradient(rgba(26, 26, 26, 0.829), rgba(43, 43, 43, 0.247));
-	height: 22rem;
+	height: 18rem;
 }
 
 .itemTitle {
-	font-size: 4rem;
+	font-size: 275%;
 	color: #fff;
 	padding-top: 3.75rem;
 }
