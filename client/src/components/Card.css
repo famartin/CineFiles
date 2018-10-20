@@ -18,6 +18,10 @@
 	margin-bottom: 2.25rem;
 }
 
+.poster:hover {
+	border: 1px solid black;
+} 
+
 .card-title {
 	text-align: center;
 	padding-top: 1rem;

@@ -46,6 +46,11 @@
     background:rgb(214, 91, 97)!important;
 }
 
+.nav-item
+button:hover {
+    border: 1px solid black;
+}
+
 .page-item {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 10px 20px 0 rgba(0, 0, 0, 0.1);
 }

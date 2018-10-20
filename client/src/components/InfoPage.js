@@ -39,7 +39,7 @@ class InfoPage extends Component {
 	  	})
 	  	.then(data => {
 			this.setState({
-				title: data.original_title,
+				title: data.title,
 				overview: data.overview,
 				releaseDate: data.release_date,
 				posterPath: data.poster_path,

@@ -2,3 +2,19 @@
 	background-color: white;
 	margin-top: 2rem;
 }
+
+.titleBlock {
+	background-color: rgba(116, 116, 116, 0.247);
+	background-repeat:no-repeat;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	background-size:cover;
+	background-position:center;
+	height: 18rem;
+}
+
+.itemTitle {
+	font-size: 4rem;
+	color: #fff;
+}

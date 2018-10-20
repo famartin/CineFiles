@@ -5,8 +5,8 @@ class InfoPageMain extends Component {
 		return (
 			<div className="section infoPageMain container">
 				<div className="row">
-					<div className="col-md-12">
-						<h2 className="text-center">
+					<div className="col-md-12 titleBlock" style={{'background-image': `url('https://image.tmdb.org/t/p/w1280${this.props.itemBackdrop}')`}}>
+						<h2 className="text-center itemTitle">
 							{this.props.itemTitle}
 						</h2>
 					</div>
@@ -22,10 +22,10 @@ class InfoPageMain extends Component {
 				</div>
 				<div className="row">
 					<div className="col-md-6">
-						<img alt={`${this.props.itemTitle} Poster`} className="poster" src={`https://image.tmdb.org/t/p/w500${this.props.itemPoster}`} />
+						{this.props.itemPoster && <img alt={`${this.props.itemTitle} Poster`} className="poster" src={`https://image.tmdb.org/t/p/w500${this.props.itemPoster}`} /> }
 					</div>
 					<div className="col-md-6">
-						<img className="backdrop" src={`https://image.tmdb.org/t/p/w500${this.props.itemBackdrop}`} />
+						{this.props.itemBackdrop && <img alt="backdrop" className="backdrop" src={`https://image.tmdb.org/t/p/w500${this.props.itemBackdrop}`} /> }
 					</div>
 				</div>
 			</div>
